@@ -1,0 +1,20 @@
+<h1>List all user</h1>
+<table border="1">
+    <tr>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Address</td>
+      <td colspan="2">Aksi</td>
+    </tr>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address }}</td>
+        <td><a href="/user/update/{{ user.id }}"> Edit </a></td>
+        <td><a href="/user/delete/{{ user.id }}"> Delete </a></td>
+      </tr>
+    {% endfor %}
+</table>
+
+<h3><a href="/user/create"> Create New User</a></h3>
